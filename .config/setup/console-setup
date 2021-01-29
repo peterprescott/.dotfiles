@@ -1,0 +1,12 @@
+# move to /etc/default/console-setup
+
+ACTIVE_CONSOLES="/dev/tty[1-6]"
+
+CHARMAP="UTF-8"
+
+CODESET="Lat15"
+FONTFACE="Fixed"
+FONTSIZE="12x24"
+
+VIDEOMODE=
+

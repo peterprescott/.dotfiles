@@ -1,0 +1,4 @@
+#!/bin/sh
+
+echo "\n\nIf you would prefer a graphical interface \n\
+to this simple terminal setup, then run 'startx'.\n\n\n"
