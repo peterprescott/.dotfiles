@@ -47,7 +47,4 @@ My configuration combines various pieces:
 - welcome messages that help the user get started;
 - aliases to go straight to whichever config file you want to edit.
 
-
-
-
-
+Read my [personal config cheatsheet](.config/README.md) for full details.
