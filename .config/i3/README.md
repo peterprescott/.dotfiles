@@ -12,7 +12,7 @@ Windows logo on it).
 - SUPER+x closes the GUI (press x again to confirm) 
 - SUPER+q closes the window
 - SUPER+f makes the window full-screen
-- SUPER+r allows you to resize the window (with h/j/k/l)
+- SUPER+a allows you to resize the window (with h/j/k/l)
 - SUPER+w displays this welcome message again
 
 To see and edit the full configuration, 

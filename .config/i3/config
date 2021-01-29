@@ -9,7 +9,7 @@ set $EDITOR=vim
 set $VISUAL=vim
 
 # display i3 welcome message again
-bindsym $mod+w exec "xterm -hold ~/.init"
+bindsym $mod+w exec xterm -hold ~/.config/i3/init.sh
 
 # disable titles
 new_window pixel 0
