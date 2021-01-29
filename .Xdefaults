@@ -2,7 +2,7 @@ XTerm*Background: black
 XTerm*Foreground: white
 XTerm*BorderWidth: 5
 XTerm*faceName: Monospace
-XTerm*faceSize: 24
+XTerm*faceSize: 12 
 xterm*scrollBar: true
 XTerm*selectToClipboard: true
 XTerm*VT100.Translations: #override \
