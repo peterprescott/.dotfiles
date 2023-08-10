@@ -38,7 +38,7 @@ nnoremap <leader>sv :source $MYVIMRC<cr>
 " ALE is an *asynchronous linting engine*
 " (make sure that pylint etc. are installed in your python environment)
 let g:ale_virtualtext_cursor = 'current'
-let g:ale_sign_error = '\n>>'
+let g:ale_sign_error = '>>'
 let g:ale_sign_warning = '--'
 let g:ale_set_highlights=1
 let g:ale_echo_msg_error_str = 'E'
