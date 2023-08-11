@@ -49,3 +49,6 @@ alias xtermconfig="vi ~/.Xdefaults"
 # other helpful aliases
 alias ls='ls --color=auto'	# use color
 alias tmux='tmux -2'		# use 256 colors in tmux
+
+# 
+# source ~/.init_conda
