@@ -7,6 +7,8 @@ call plug#begin('~/.local/share/nvim/plugged')
 " sensible initial settings
 Plug 'tpope/vim-sensible'
 
+Plug 'tpope/vim-surround'
+
 " toggle comments with `gcc`
 Plug 'tpope/vim-commentary'
 
@@ -22,12 +24,33 @@ Plug 'dense-analysis/ale'
 " sudo
 Plug 'lambdalisue/suda.vim'
 
+" python folding
+Plug 'tmhedberg/SimpylFold'
+
+" code structure
+Plug 'preservim/tagbar'
+
+" statusline
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+let g:airline_theme='simple'
+
+" window resizing
+Plug 'simeji/winresizer'
+
+" markdown
+Plug 'preservim/vim-markdown'
+
+" file explorer
+Plug 'preservim/nerdtree'
+
 call plug#end()
 
 set number " line numbering
 set statusline=%{wordcount().words}\ words
 set tw=72 " limit text-width 
-set hidden " buffers
+set nohidden " buffers
+set colorcolumn=72
 
 " color scheme
 set background=dark
@@ -35,8 +58,27 @@ colorscheme gruvbox
 
 " open .vimrc
 let mapleader = ","
-nnoremap <leader>ev :vsplit $MYVIMRC<cr>
-nnoremap <leader>sv :source $MYVIMRC<cr>
+nnoremap <leader>v :vsplit $MYVIMRC<cr>
+" reload
+nnoremap <leader>r :source $MYVIMRC<cr>
+
+" code class structure
+nmap <leader>c :TagbarToggle<CR>
+
+" install plugins
+nmap <leader>p :PlugInstall<CR>
+
+" windows
+let g:winresizer_start_key = '<leader>w'
+
+" file explorer
+nnoremap <leader>f :NERDTreeToggle<cr>
+
+" markdown
+let g:vim_markdown_fenced_languages = ['python', 'c', 'javascript']
+let g:vim_markdown_folding_disabled = 1
+let g:vim_markdown_frontmatter = 1
+
 
 " suda config
 let g:suda_smart_edit = 1
