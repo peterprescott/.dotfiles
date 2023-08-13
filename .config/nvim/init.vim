@@ -19,6 +19,9 @@ Plug 'jpalardy/vim-slime'
 " ale syntax checking
 Plug 'dense-analysis/ale'
 
+" sudo
+Plug 'lambdalisue/suda.vim'
+
 call plug#end()
 
 set number " line numbering
@@ -34,6 +37,9 @@ colorscheme gruvbox
 let mapleader = ","
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 nnoremap <leader>sv :source $MYVIMRC<cr>
+
+" suda config
+let g:suda_smart_edit = 1
 
 " ALE is an *asynchronous linting engine*
 " (make sure that pylint etc. are installed in your python environment)
