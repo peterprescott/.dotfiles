@@ -31,6 +31,11 @@ zstyle ':completion:*:kill:*' command 'ps -u $USER -o pid,%cpu,tty,cputime,cmd'
 # Use vi keybindings 
 bindkey -v
 
+# history
+export HISTFILE=~/.zhist
+export HISTSIZE=1000
+export SAVEHIST=1000
+
 # default to tmux shell
 if [[ -z "$TMUX" ]]; then
         tmux
@@ -45,11 +50,12 @@ alias vimconfig="vi ~/.config/nvim/init.vim"
 alias tmuxconfig="vi ~/.tmux.conf"
 alias i3config="vi ~/.config/i3/config"
 alias xtermconfig="vi ~/.Xdefaults"
+alias keydconfig="vi /etc/keyd/default.conf"
 
 # other helpful aliases
 alias ls='ls --color=auto'	# use color
 alias tmux='tmux -2'		# use 256 colors in tmux
 
 # 
-# source ~/.init/conda
+source ~/.init/conda
 # source ~/.init/nvm
