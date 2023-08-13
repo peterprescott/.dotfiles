@@ -129,10 +129,10 @@ bar {
 
 }
 
-workspace 1 output HDMI-2
-workspace 2 output DP-1
-workspace 9 output VGA-1
-exec sh /home/peterprescott/.screenlayout/t.sh
+workspace 1 output DP-1
+workspace 2 output DP-2-1
+workspace 9 output DP-2-2
+exec sh /home/peterprescott/.screenlayout/display.sh
 
 exec x-terminal-emulator 
 
