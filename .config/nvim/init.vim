@@ -1,4 +1,5 @@
 """ VIM CONFIG """
+
 " Try `:help`, or even `:Tutor`.
 
 " Use vim-plug for plugins
