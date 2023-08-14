@@ -7,3 +7,4 @@ create_default_packages:
   - black
   - pytest
   - ipython
+  - pynvim
