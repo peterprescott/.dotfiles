@@ -162,11 +162,11 @@ let g:slime_default_config = {
 let g:slime_dont_ask_default = 1
 
 " ipython cell
-nmap <leader>ipy :SlimeSend1 conda activate 38; ipython --matplotlib<cr>
+nmap <leader>ii :SlimeSend1 conda activate 38; ipython --matplotlib<cr>
 nmap <leader>exit :SlimeSend1 exit<cr>
-nmap <leader>rc :IPythonCellExecuteCell<cr> " execute cell
-nmap <leader>ra :IPythonCellRun<cr> " run whole script
-nmap <leader>xi :IPythonCellClear<cr> " clear iPython screen
-nmap <leader>xf :IPythonCellClose<cr> " close matplotlib figs
+nmap <leader>ww :IPythonCellExecuteCell<cr> " execute cell
+nmap <leader>wa :IPythonCellRun<cr> " run whole script
+nmap <leader>dd :IPythonCellClear<cr> " clear iPython screen
+nmap <leader>da :IPythonCellClose<cr> " close matplotlib figs
 
 
