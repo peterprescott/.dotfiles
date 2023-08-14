@@ -164,8 +164,8 @@ let g:slime_dont_ask_default = 1
 " ipython cell
 nmap <leader>ii :SlimeSend1 conda activate 38; ipython --matplotlib<cr>
 nmap <leader>exit :SlimeSend1 exit<cr>
-nmap <leader>xx :IPythonCellExecuteCell<cr> " execute cell
-nmap <leader>xa :IPythonCellRun<cr> " run whole script
+nmap <leader>ww :IPythonCellExecuteCell<cr> " execute cell
+nmap <leader>wa :IPythonCellRun<cr> " run whole script
 nmap <leader>dd :IPythonCellClear<cr> " clear iPython screen
 nmap <leader>da :IPythonCellClose<cr> " close matplotlib figs
 
