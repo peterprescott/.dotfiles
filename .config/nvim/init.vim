@@ -1,5 +1,4 @@
 """ VIM CONFIG """
-" Or Neovim, so this file is called init.vim
 " Try `:help`, or even `:Tutor`.
 
 " Use vim-plug for plugins
