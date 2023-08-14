@@ -17,6 +17,7 @@ Plug 'morhetz/gruvbox'
 
 " ipython REPL
 Plug 'jpalardy/vim-slime'
+Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
 
 " ale syntax checking
 Plug 'dense-analysis/ale'
@@ -61,7 +62,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 set number " line numbering
 " set statusline=%{wordcount().words}\ words
 set tw=72 " limit text-width 
-set nohidden " buffers
+set hidden " buffers
 set colorcolumn=72
 
 " color scheme
@@ -159,4 +160,13 @@ let g:slime_default_config = {
             \ 'socket_name': get(split($TMUX, ','), 0),
             \ 'target_pane': '{bottom}' }
 let g:slime_dont_ask_default = 1
+
+" ipython cell
+nmap <leader>ii :SlimeSend1 conda activate 38; ipython --matplotlib<cr>
+nmap <leader>exit :SlimeSend1 exit<cr>
+nmap <leader>xx :IPythonCellExecuteCell<cr> " execute cell
+nmap <leader>xa :IPythonCellRun<cr> " run whole script
+nmap <leader>dd :IPythonCellClear<cr> " clear iPython screen
+nmap <leader>da :IPythonCellClose<cr> " close matplotlib figs
+
 
