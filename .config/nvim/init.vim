@@ -47,14 +47,28 @@ Plug 'preservim/nerdtree'
 
 " code completion
 Plug 'github/copilot.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
 
 
 call plug#end()
 
-" Start NERDTree when Vim is opened and put the cursor back in the other window.
-autocmd VimEnter * Tagbar | wincmd p
-autocmd VimEnter * NERDTree | wincmd p
+function! OpenNERDTree()
+    if &columns > 120
+        NERDTree | wincmd p
+    endif
+    wincmd p " move cursor to the previous window (main file)
+endfunction
+
+function! OpenTagbar()
+    if &columns > 160
+        Tagbar | wincmd p
+    endif
+    wincmd p " Move cursor to the previous window (main file)
+endfunction
+
+" Auto commands to trigger the functions
+autocmd VimEnter * call OpenNERDTree()
+autocmd VimEnter * call OpenTagbar()
+
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -80,29 +94,6 @@ nmap <leader>q :Bdelete<cr>
 
 " virtualenv
 let g:python_host_prog = system('which python')
-
-" " coc
-" runtime coc-config.vim
-" function! InstallCocExtensions()
-"     let extensions = [
-" 	\ '@hexuhua/coc-copilot',
-"         \ 'coc-python',
-"         \ 'coc-json',
-"         \ 'coc-html',
-"         \ 'coc-css',
-"         \ 'coc-tsserver',
-"         \ 'coc-clangd',
-"         \ 'coc-vimlsp',
-"         \ 'coc-git',
-"         \ 'coc-markdownlint'
-"         \ ]
-
-"     for ext in extensions
-"         execute 'CocInstall ' . ext
-"     endfor
-"     echo "Installed CoC extensions."
-" endfunction
-" nmap <leader>coc :call InstallCocExtensions()<cr>
 
 " code class structure
 nmap <leader>c :TagbarToggle<CR>
@@ -155,7 +146,6 @@ let g:ale_lsp_suggestions = 1
 let g:slime_target = 'tmux'
 " fix paste issues in ipython
 let g:slime_python_ipython = 1
-" always send text to the top-right pane in the current tmux tab without asking
 let g:slime_default_config = {
             \ 'socket_name': get(split($TMUX, ','), 0),
             \ 'target_pane': '{bottom}' }
