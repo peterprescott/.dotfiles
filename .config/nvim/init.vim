@@ -6,11 +6,9 @@ call plug#begin('~/.local/share/nvim/plugged')
 
 " sensible initial settings
 Plug 'tpope/vim-sensible'
-
 Plug 'tpope/vim-surround'
-
-" toggle comments with `gcc`
 Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 
 " colorscheme
 Plug 'morhetz/gruvbox'
@@ -48,6 +46,8 @@ Plug 'preservim/nerdtree'
 " code completion
 Plug 'github/copilot.vim'
 
+" csv
+Plug 'mechatroner/rainbow_csv'
 
 call plug#end()
 
