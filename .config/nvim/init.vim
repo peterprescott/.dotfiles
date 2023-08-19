@@ -112,7 +112,14 @@ nmap <leader>B :bp<cr>
 
 
 " file explorer (nerdtree)
-nnoremap <leader>f :NERDTreeToggle<cr>
+function NERDTreeToggleAndRefresh()
+  :NERDTreeToggle
+  if g:NERDTree.IsOpen()
+    :NERDTreeRefreshRoot
+  endif
+endfunction
+
+nnoremap <leader>f :call NERDTreeToggleAndRefresh()<cr>
 let NERDTreeStatusline="%{matchstr(getline('.'), '\\s\\zs\\w\\(.*\\)')}"
 
 " markdown
