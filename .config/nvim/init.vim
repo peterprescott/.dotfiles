@@ -78,6 +78,8 @@ set number " line numbering
 set tw=72 " limit text-width 
 set hidden " buffers
 set colorcolumn=72
+filetype plugin on
+autocmd FileType html,css,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
 
 " color scheme
 set background=dark
