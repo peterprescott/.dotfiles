@@ -13,6 +13,8 @@ Plug 'tpope/vim-fugitive'
 " colorscheme
 Plug 'morhetz/gruvbox'
 
+Plug 'ap/vim-css-color' " css color previev
+
 " ipython REPL
 Plug 'jpalardy/vim-slime'
 Plug 'hanschen/vim-ipython-cell', { 'for': 'python' }
@@ -80,6 +82,8 @@ set hidden " buffers
 set colorcolumn=72
 filetype plugin on
 autocmd FileType html,css,javascript setlocal shiftwidth=2 tabstop=2 softtabstop=2 expandtab
+set foldmethod=syntax
+syntax region htmlFold start="<\z(\<\(area\|base\|br\|col\|command\|embed\|hr\|img\|input\|keygen\|link\|meta\|para\|source\|track\|wbr\>\)\@![a-z-]\+\>\)\%(\_s*\_[^/]\?>\|\_s\_[^>]*\_[^>/]>\)" end="</\z1\_s*>" fold transparent keepend extend containedin=htmlHead,htmlD
 
 " color scheme
 set background=dark
