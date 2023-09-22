@@ -165,6 +165,7 @@ let g:slime_default_config = {
 let g:slime_dont_ask_default = 1
 
 " ipython cell
+let g:ipython_cell_tag = '```'
 nmap <leader>ii :SlimeSend1 conda activate 38; ipython --matplotlib<cr>
 nmap <leader>exit :SlimeSend1 exit<cr>
 nmap <leader>ww :IPythonCellExecuteCell<cr> " execute cell
