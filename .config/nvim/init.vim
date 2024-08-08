@@ -77,7 +77,7 @@ autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTr
 
 set number " line numbering
 " set statusline=%{wordcount().words}\ words
-set tw=72 " limit text-width 
+" set tw=72 " limit text-width 
 set hidden " buffers
 set colorcolumn=72
 filetype plugin on
