@@ -45,8 +45,8 @@ Plug 'preservim/vim-markdown'
 " file explorer
 Plug 'preservim/nerdtree'
 
-" code completion
-Plug 'github/copilot.vim'
+" " code completion
+" Plug 'github/copilot.vim'
 
 " csv
 Plug 'mechatroner/rainbow_csv'
