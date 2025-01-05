@@ -47,6 +47,7 @@ Plug 'preservim/nerdtree'
 
 " " code completion
 " Plug 'github/copilot.vim'
+Plug 'Exafunction/codeium.vim', { 'branch': 'main' }
 
 " csv
 Plug 'mechatroner/rainbow_csv'
