@@ -56,6 +56,11 @@ alias keydconfig="vi /etc/keyd/default.conf"
 alias ls='ls --color=auto'	# use color
 alias tmux='tmux -2'		# use 256 colors in tmux
 
-# 
+# code: Python, Javascript, Rust, ...
 source ~/.init/conda
-# source ~/.init/nvm
+source ~/.init/nvm
+source ~/.cargo/env
+
+#
+export PATH=$PATH:$HOME/.local/bin/omniverse-launcher
+alias ableton="WINEPREFIX=~/.wine_ableton wine ~/.wine_ableton/drive_c/ProgramData/Ableton/Live\ 9\ Standard/Program/Ableton\ Live\ 9\ Standard.exe"
