@@ -99,32 +99,27 @@ clients:
   #     proxy: socks5://127.0.0.1:1080                # Set proxy
   #     connect_timeout: 10                           # Set timeout in seconds for connect to api
 
-  # See https://platform.openai.com/docs/quickstart
-  - type: openai
-    api_base: https://api.openai.com/v1               # Optional
-    api_key: xxx
-    organization_id: org-xxx                          # Optional
-
   # For any platform compatible with OpenAI's API
   - type: openai-compatible
     name: local
-    api_base: http://localhost:8080/v1
-    api_key: xxx                                      # Optional
+    api_base: http://localhost:11434/v1
     models:
-      - name: llama3.1
-        max_input_tokens: 128000
-        supports_function_calling: true
-      - name: jina-embeddings-v2-base-en
-        type: embedding
-        default_chunk_size: 1500
-        max_batch_size: 100
-      - name: jina-reranker-v2-base-multilingual
-        type: reranker
+      - name: llama3.2
+      - name: llama3.3
+      - name: tinyllama
+      - name: smollm
+      - name: mannix/deepseek-coder-v2-lite-instruct
+
+  # See https://platform.openai.com/docs/quickstart
+  - type: openai
+    api_base: https://api.openai.com/v1               # Optional
+    # api_key: xxx
+    # organization_id: org-xxx                          # Optional
 
   # See https://ai.google.dev/docs
   - type: gemini
     api_base: https://generativelanguage.googleapis.com/v1beta
-    api_key: xxx
+    # api_key: xxx
     patch:
       chat_completions:
         '.*':
@@ -142,10 +137,4 @@ clients:
   # See https://docs.anthropic.com/claude/reference/getting-started-with-the-api
   - type: claude
     api_base: https://api.anthropic.com/v1            # Optional
-    api_key: xxx
-
-  # See https://docs.mistral.ai/
-  - type: openai-compatible
-    name: mistral
-    api_base: https://api.mistral.ai/v1
-    api_key: xxx
+    # api_key: xxx
