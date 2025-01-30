@@ -45,16 +45,29 @@ Plug 'preservim/vim-markdown'
 " file explorer
 Plug 'preservim/nerdtree'
 
-" code completion
-Plug 'github/copilot.vim'
-" Plug 'neoclide/coc.nvim', {'branch': 'release'}
-
+" code generation
+Plug 'Exafunction/codeium.vim'
 
 call plug#end()
 
-" Start NERDTree when Vim is opened and put the cursor back in the other window.
-autocmd VimEnter * Tagbar | wincmd p
-autocmd VimEnter * NERDTree | wincmd p
+function! OpenNERDTree()
+    if &columns > 120
+        NERDTree | wincmd p
+    endif
+    wincmd p " move cursor to the previous window (main file)
+endfunction
+
+function! OpenTagbar()
+    if &columns > 160
+        Tagbar | wincmd p
+    endif
+    wincmd p " Move cursor to the previous window (main file)
+endfunction
+
+" Auto commands to trigger the functions
+autocmd VimEnter * call OpenNERDTree()
+autocmd VimEnter * call OpenTagbar()
+
 " Exit Vim if NERDTree is the only window left.
 autocmd BufEnter * if tabpagenr('$') == 1 && winnr('$') == 1 && exists('b:NERDTree') && b:NERDTree.isTabTree() |
     \ quit | endif
@@ -80,29 +93,6 @@ nmap <leader>q :Bdelete<cr>
 
 " virtualenv
 let g:python_host_prog = system('which python')
-
-" " coc
-" runtime coc-config.vim
-" function! InstallCocExtensions()
-"     let extensions = [
-" 	\ '@hexuhua/coc-copilot',
-"         \ 'coc-python',
-"         \ 'coc-json',
-"         \ 'coc-html',
-"         \ 'coc-css',
-"         \ 'coc-tsserver',
-"         \ 'coc-clangd',
-"         \ 'coc-vimlsp',
-"         \ 'coc-git',
-"         \ 'coc-markdownlint'
-"         \ ]
-
-"     for ext in extensions
-"         execute 'CocInstall ' . ext
-"     endfor
-"     echo "Installed CoC extensions."
-" endfunction
-" nmap <leader>coc :call InstallCocExtensions()<cr>
 
 " code class structure
 nmap <leader>c :TagbarToggle<CR>
@@ -168,5 +158,6 @@ nmap <leader>ww :IPythonCellExecuteCell<cr> " execute cell
 nmap <leader>wa :IPythonCellRun<cr> " run whole script
 nmap <leader>dd :IPythonCellClear<cr> " clear iPython screen
 nmap <leader>da :IPythonCellClose<cr> " close matplotlib figs
+
 
 
