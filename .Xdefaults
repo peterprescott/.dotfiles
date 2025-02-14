@@ -2,7 +2,7 @@ XTerm*Background: black
 XTerm*Foreground: white
 XTerm*BorderWidth: 5
 XTerm*faceName: Monospace
-XTerm*faceSize: 12 
+XTerm*faceSize: 18 
 xterm*scrollBar: true
 XTerm*selectToClipboard: true
 XTerm*VT100.Translations: #override \
@@ -10,4 +10,6 @@ XTerm*VT100.Translations: #override \
   Shift Ctrl<Key>V: insert-selection(PRIMARY) \n\
   Shift<Btn1Down>: select-start() \n\
   Shift<Btn1Motion>: select-extend() \n\
-  Shift<Btn1Up>: select-end(CLIPBOARD) \n
+  Shift<Btn1Up>: select-end(CLIPBOARD) \n\
+  Shift Ctrl <Key> minus: smaller-vt-font() \n\
+  Shift Ctrl <Key> =: larger-vt-font() \n\
